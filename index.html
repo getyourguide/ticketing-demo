@@ -11,37 +11,9 @@
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
   <title>An amazing attraction</title>
-  <!-- Partner ticketing -->
-  <script defer data-gyg-partner-hash="IO61TSV"
-    src="https://cdn.getyourguide.com/partner-ticketing/latest/ticketing.umd.min.js"></script>
-  <!-- End partner ticketing -->
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != "dataLayer" ? "&l=" + l : "";
-      j.async = true;
-      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "GTM-N3CNDK7");
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <script>
-    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-    posthog.init('phc_k5iHV4ZzZ7sUZUeIMs8eBmeItwTNSTtejcBhS6YwkTm', { api_host: 'https://app.posthog.com' })
-  </script>
 </head>
 
 <body class="text-gray-800 antialiased">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3CNDK7" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
     <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
       <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -72,10 +44,9 @@
           </li>
           <li class="flex items-center">
             <a data-test-id="ticketing-cta"
-              class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
-              style="transition: all 0.15s ease 0s;"
-              href="https://www.getyourguide.com/?partner_ticketing_activity_ids=387760,188394,368381,93723">
-              <i class="fas fa-store"></i> Buy ticket now
+              class="storefront-buy bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+              style="transition: all 0.15s ease 0s;" data-tck-products-ids="" href="#">
+              <i class="fas fa-store"></i> Buy ticket now NEW
             </a>
           </li>
         </ul>
@@ -386,12 +357,10 @@
       </div>
     </div>
   </footer>
+
+  <script async defer data-ticketing-token="NVWOBZJEEWXMUMKF"
+    src="https://cdn.getyourguide.com/tck/storefront/latest/loader.js">
+    </script>
 </body>
-<script>
-  function toggleNavbar(collapseID) {
-    document.getElementById(collapseID).classList.toggle("hidden");
-    document.getElementById(collapseID).classList.toggle("block");
-  }
-</script>
 
 </html>
