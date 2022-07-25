@@ -360,10 +360,10 @@
   
   <script>
     // Add dynamic commit hash to loader
-    const COMMIT_HASH_PARAM = new URL(window.location.href).searchParams.get('tck_commit_hash') || 'latest'
+    const COMMIT_VERSION = new URL(window.location.href).searchParams.get('tck_version') || 'latest'
     const script = document.createElement('script');
-    script.setAttribute('src', `https://cdn.getyourguide.com/tck/storefront/${COMMIT_HASH_PARAM}/loader.js`)
-    script.setAttribute('data-ticketing-token', `jpnMMZ9VQLfFveiEdvGzE5M6rBltxevL`)
+    script.setAttribute('src', `https://cdn.getyourguide.com/tck/storefront/${COMMIT_VERSION}/loader.js`)
+    script.setAttribute('data-ticketing-token', `TESTAAYDDWXMXNKD`)
     document.body.append(script)
   </script>
 </body>
