@@ -357,14 +357,36 @@
       </div>
     </div>
   </footer>
-  
+
   <script>
+    const CONFIG = {
+      testing: {
+        url: "https://ticketing-directus.testing20.gygkube.com"
+      },
+      production: {
+        url: "https://ticketing-portal.getyourguide.com"
+      }
+    };
+
     // Add dynamic commit hash to loader
     const COMMIT_VERSION = new URL(window.location.href).searchParams.get('tck_version') || 'latest'
     const script = document.createElement('script');
     script.setAttribute('src', `https://cdn.getyourguide.com/tck/storefront/${COMMIT_VERSION}/loader.js`)
     script.setAttribute('data-ticketing-token', `TESTAAYDDWXMXNKD`)
     document.body.append(script)
+
+    script.onload = () => devInfo.innerHTML = devInfo.innerHTML.replace("Loading...", "Loaded ✔");
+    script.onerror = () => devInfo.innerHTML = devInfo.innerHTML.replace("Loading...", "ERROR ⚠️");
+
+    let mode = "production";
+    if (COMMIT_VERSION.charAt(0) === "t") mode = "testing"
+
+    const devInfo = document.getElementById("devinfo");
+    const buildNumber = COMMIT_VERSION !== "latest" ? COMMIT_VERSION.substring(1) : "latest"
+
+    devInfo.innerHTML = devInfo.innerHTML.replace("$DIRECTUS_URL", CONFIG[mode].url)
+    devInfo.innerHTML = devInfo.innerHTML.replace("$DRONE_BUILD_NUMBER", buildNumber)
+    devInfo.innerHTML = devInfo.innerHTML.replace("$DRONE_BUILD_LINK", `https://drone.gygadmin.com/getyourguide/ticketing-storefront/${buildNumber === "latest" ? "" : buildNumber}`)
   </script>
 </body>
 
